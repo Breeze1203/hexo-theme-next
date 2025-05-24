@@ -1,0 +1,109 @@
+:root {
+  --body-bg-color: $body-bg-color;
+  --content-bg-color: $content-bg-color;
+  --card-bg-color: $card-bg-color;
+  --text-color: $text-color;
+  --selection-bg: $selection-bg;
+  --selection-color: $selection-color;
+  --blockquote-color: $blockquote-color;
+  --link-color: $link-color;
+  --link-hover-color: $link-hover-color;
+  --brand-color: $brand-color;
+  --brand-hover-color: $brand-hover-color;
+  --table-row-odd-bg-color: $table-row-odd-bg-color;
+  --table-row-hover-bg-color: $table-row-hover-bg-color;
+  --menu-item-bg-color: $menu-item-bg-color;
+  --theme-color: $theme-color;
+
+  --btn-default-bg: $btn-default-bg;
+  --btn-default-color: $btn-default-color;
+  --btn-default-border-color: $btn-default-border-color;
+  --btn-default-hover-bg: $btn-default-hover-bg;
+  --btn-default-hover-color: $btn-default-hover-color;
+  --btn-default-hover-border-color: $btn-default-hover-border-color;
+
+  --highlight-background: $highlight-background;
+  --highlight-foreground: $highlight-foreground;
+  --highlight-gutter-background: $highlight-gutter-background;
+  --highlight-gutter-foreground: $highlight-gutter-foreground;
+
+  color-scheme: light;
+}
+
+if (hexo-config('darkmode')) {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --body-bg-color: $body-bg-color-dark;
+      --content-bg-color: $content-bg-color-dark;
+      --card-bg-color: $card-bg-color-dark;
+      --text-color: $text-color-dark;
+      --selection-bg: $selection-bg-dark;
+      --selection-color: $selection-color-dark;
+      --blockquote-color: $blockquote-color-dark;
+      --link-color: $link-color-dark;
+      --link-hover-color: $link-hover-color-dark;
+      --brand-color: $brand-color-dark;
+      --brand-hover-color: $brand-hover-color-dark;
+      --table-row-odd-bg-color: $table-row-odd-bg-color-dark;
+      --table-row-hover-bg-color: $table-row-hover-bg-color-dark;
+      --menu-item-bg-color: $menu-item-bg-color-dark;
+      --theme-color: $theme-color-dark;
+
+      --btn-default-bg: $btn-default-bg-dark;
+      --btn-default-color: $btn-default-color-dark;
+      --btn-default-border-color: $btn-default-border-color-dark;
+      --btn-default-hover-bg: $btn-default-hover-bg-dark;
+      --btn-default-hover-color: $btn-default-hover-color-dark;
+      --btn-default-hover-border-color: $btn-default-hover-border-color-dark;
+
+      --highlight-background: $highlight-background-dark;
+      --highlight-foreground: $highlight-foreground-dark;
+      --highlight-gutter-background: $highlight-gutter-background-dark;
+      --highlight-gutter-foreground: $highlight-gutter-foreground-dark;
+
+      color-scheme: dark;
+    }
+
+    img {
+      opacity: .75;
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+
+    iframe {
+      color-scheme: light;
+    }
+  }
+}
+
+
+/* 适用于 About 页面的技术徽章容器 */
+.tech-badges-container-about {
+  display: flex;         /* 启用 Flexbox 布局 */
+  flex-direction: row;   /* 主轴方向为水平（默认也是这个）*/
+  flex-wrap: wrap;       /* 允许项目自动换行 */
+  justify-content: center; /* 项目在主轴（当前是横轴）上居中对齐 */
+  align-items: center;   /* 项目在交叉轴（当前是纵轴）上居中对齐（对于每一行内的项目）*/
+  padding: 10px 0;       /* 容器的上下内边距，左右为0因为内容会居中 */
+  margin: 25px auto;     /* 容器的上下外边距，并使其自身在页面中水平居中 */
+  /* max-width: 800px; */ /* 根据你的主题内容宽度调整或移除此行 */
+                          /* 如果你的主题内容区域本身就很窄，这个max-width可能不需要 */
+}
+
+.tech-badges-container-about img {
+  margin: 5px 7px;      /* 给每个徽章添加上下5px，左右7px的外边距，制造间隙 */
+  vertical-align: middle; /* 确保图片垂直对齐良好 */
+  height: 20px;           /* 可选：统一徽章高度，shields.io的徽章通常是20px高 */
+                          /* 如果徽章大小不一，可以考虑这个来统一视觉 */
+}
+
+/* 确保 Markdown 中的其他标题和链接样式与主题一致 */
+/* (这部分通常不需要，除非你想特别覆盖主题默认样式) */
+/*
+.post-body .tech-badges-container-about + h2,
+.page-post-body .tech-badges-container-about + h2 {
+  margin-top: 35px;
+}
+*/
